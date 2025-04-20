@@ -10,18 +10,16 @@ Program ini adalah sistem manajemen produk untuk skincare yang memungkinkan peng
 - Menghapus otomatis Produk yang terkait jika ada brand atau category yang dihapus.
 
 ## Desain Program
-1. Config Database (config/db.php)
-Pada file ini, kita mendefinisikan kelas Database yang akan menangani koneksi ke database MySQL. Program menggunakan PDO untuk melakukan query ke database. Konfigurasi database seperti host, username, dan password dapat disesuaikan dengan pengaturan server lokal.
+1. Config Database
+Pertama, pada file config/db.php, kita mendefinisikan kelas Database yang akan menangani koneksi ke database MySQL. Program menggunakan PDO untuk melakukan query ke database. Konfigurasi database seperti host, username, dan password disesuaikan.
 
 2. Model Classes
-Brand: Kelas untuk menangani data terkait brand skincare. Menyediakan metode seperti getAllBrands(), createBrand(), updateBrand(), dan deleteBrand().
+- Brand: Kelas untuk menangani data terkait brand skincare. Menyediakan metode seperti mengambil semua brand dan mengelola data brand.
+- Category: Kelas untuk menangani kategori produk skincare. Menyediakan metode untuk mengambil semua kategori dan mengelola data kategori.
+- Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil semua produk dan mengelola data produk.
 
-Category: Kelas untuk menangani kategori produk skincare. Menyediakan metode untuk mengambil semua kategori dan mengelola data kategori.
-
-Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil, menambah, mengedit, dan menghapus produk.
-
-3. View (Halaman):
-Halaman Index (index.php): Menampilkan semua brands, categories, dan products dalam bentuk tabel. Tabel ini juga menyediakan tautan untuk mengedit dan menghapus data.
+3. View :
+Halaman Utama (index.php): Menampilkan semua brands, categories, dan products dalam bentuk tabel. Tabel ini juga menyediakan tautan untuk mengedit dan menghapus data.
 
 Halaman Edit: Halaman untuk mengedit data brand atau category. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
 
