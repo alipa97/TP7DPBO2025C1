@@ -18,7 +18,7 @@ Pertama, pada file config/db.php, kita mendefinisikan kelas Database yang akan m
 - Category: Kelas untuk menangani kategori produk skincare. Menyediakan metode untuk mengambil semua kategori dan mengelola data kategori.
 - Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil semua produk dan mengelola data produk.
 
-3. View :
+3. View:
 Halaman Utama (index.php): Menampilkan semua brands, categories, dan products dalam bentuk tabel. Tabel ini juga menyediakan tautan untuk mengedit dan menghapus data.
 
 Halaman Edit: Halaman untuk mengedit data brand atau category. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
