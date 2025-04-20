@@ -21,43 +21,24 @@ Pertama, pada file config/db.php, kita mendefinisikan kelas Database yang akan m
 - Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil semua produk dan mengelola data produk.
 
 ### View
-- **Halaman Utama (index.php)**: Halaman utama (index.php) adalah pusat navigasi untuk seluruh aplikasi. Pada halaman ini, pengguna dapat memilih untuk mengelola produk, brand, dan kategori melalui tautan yang ada di bagian atas halaman. Setelah memilih salah satu menu, aplikasi akan menampilkan daftar yang relevan (seperti produk, brand, atau kategori) dengan opsi untuk menambah, mengedit, atau menghapus entri.
+- **Halaman Utama (index.php):** Halaman utama (index.php) adalah pusat navigasi untuk seluruh aplikasi. Pada halaman ini, pengguna dapat memilih untuk mengelola produk, brand, dan kategori melalui tautan yang ada di bagian atas halaman. Setelah memilih salah satu menu, aplikasi akan menampilkan daftar yang relevan (seperti produk, brand, atau kategori) dengan opsi untuk menambah, mengedit, atau menghapus entri.
 
-Halaman Edit: Halaman untuk mengedit data brand atau category. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
+- **Halaman Edit:** Halaman untuk mengedit data brand, category, atau product. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
 
-Halaman Delete: Menghapus data yang dipilih melalui link dengan konfirmasi sebelum penghapusan dilakukan.
+- **Halaman Delete:** Data yang dipilih untuk dihapus akan dihapus melalui query string menggunakan parameter id. Ketika pengguna mengklik tautan "Delete", ID dari data yang akan dihapus dikirimkan melalui URL, dan proses penghapusan dilakukan di backend (class). Setelah penghapusan berhasil, pengguna akan diarahkan kembali ke halaman utama (brands, products, atau categories) untuk melihat perubahan.
 
-Alur Penggunaan
-Halaman Index: Ketika aplikasi pertama kali diakses melalui index.php, halaman utama akan menampilkan tabel yang berisi data dari brands, categories, dan products.
+## Alur Penggunaan
+Berikut alur penggunaan:
 
-Data brands ditampilkan dalam satu tabel dengan tombol untuk mengedit atau menghapus.
+### Halaman Index: Ketika aplikasi pertama kali diakses melalui index.php, halaman utama akan menampilkan pilihan menu untuk menampilkan daftar product, brand, atau category.
+- Data brands ditampilkan dalam satu tabel dengan tombol untuk mengedit atau menghapus.
+- Data categories dan products ditampilkan dengan cara yang sama.
 
-Data categories dan products ditampilkan dengan cara yang sama.
+### Menambah Data:
+- Pada halaman brands, categories, atau products, pengguna dapat menambahkan data baru dengan menggunakan form yang sudah disediakan.
 
-Menambah Data:
+### Mengedit Data:
+- Ketika pengguna memilih untuk mengedit data (misalnya, mengklik tombol edit di samping nama brand), aplikasi akan menampilkan halaman brand_edit.php. Halaman ini akan memuat form yang berisi data yang sudah ada, dan pengguna bisa mengubahnya. Setelah disubmit, data yang sudah diperbarui akan disimpan ke database. Lalu akan kembali ke laman untuk menampilkan seluruh daftar brands (jika tadi mengedit brand).
 
-Pada halaman brands, categories, atau products, admin dapat menambahkan data baru dengan menggunakan form yang sudah disediakan.
-
-Mengedit Data:
-
-Ketika admin memilih untuk mengedit data (misalnya, mengklik tombol edit di samping nama brand), aplikasi akan menampilkan halaman brand_edit.php. Halaman ini akan memuat form yang berisi data yang sudah ada, dan admin bisa mengubahnya. Setelah disubmit, data yang sudah diperbarui akan disimpan ke database.
-
-Menghapus Data:
-
-Admin dapat menghapus data seperti brand atau product. Sebelum penghapusan dilakukan, akan ada konfirmasi pop-up untuk memastikan admin benar-benar ingin menghapus data tersebut. Penghapusan data brand juga akan otomatis menghapus produk yang terkait dengan brand tersebut (karena ada relasi di database dengan foreign key).
-
-Penjelasan Alur Program
-Koneksi Database:
-
-Pada setiap halaman yang membutuhkan akses ke database (seperti halaman index, edit, delete), pertama-tama aplikasi akan menghubungkan ke database menggunakan kelas Database yang ada di config/db.php.
-
-Menampilkan Daftar Brand, Category, dan Product:
-
-Pada index.php, aplikasi akan memanggil fungsi getAllBrands() dan getAllCategories() untuk mendapatkan daftar brand dan category yang ada di database, dan menampilkannya dalam bentuk tabel.
-
-Edit dan Hapus Brand/Category/Products:
-
-Pada saat admin memilih untuk mengedit brand atau category, aplikasi akan mengambil data berdasarkan id yang dikirim melalui URL, dan menampilkannya pada form edit.
-
-Jika admin memilih untuk menghapus data, aplikasi akan menampilkan konfirmasi dan menghapus data tersebut setelah konfirmasi diterima.
-
+### Menghapus Data:
+- Pengguna dapat menghapus data seperti brand, category, atau product. Sebelum penghapusan dilakukan, akan ada konfirmasi pop-up untuk memastikan pengguna benar-benar ingin menghapus data tersebut. Penghapusan data brand atau category juga akan otomatis menghapus produk yang terkait dengan brand atau category tersebut.
