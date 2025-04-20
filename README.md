@@ -21,7 +21,7 @@ Pertama, pada file config/db.php, kita mendefinisikan kelas Database yang akan m
 - Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil semua produk dan mengelola data produk.
 
 ### View
-- *Halaman Utama (index.php)**: Halaman utama (index.php) adalah pusat navigasi untuk seluruh aplikasi. Pada halaman ini, pengguna dapat memilih untuk mengelola produk, brand, dan kategori melalui tautan yang ada di bagian atas halaman. Setelah memilih salah satu menu, aplikasi akan menampilkan daftar yang relevan (seperti produk, brand, atau kategori) dengan opsi untuk menambah, mengedit, atau menghapus entri.
+- **Halaman Utama (index.php)**: Halaman utama (index.php) adalah pusat navigasi untuk seluruh aplikasi. Pada halaman ini, pengguna dapat memilih untuk mengelola produk, brand, dan kategori melalui tautan yang ada di bagian atas halaman. Setelah memilih salah satu menu, aplikasi akan menampilkan daftar yang relevan (seperti produk, brand, atau kategori) dengan opsi untuk menambah, mengedit, atau menghapus entri.
 
 Halaman Edit: Halaman untuk mengedit data brand atau category. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
 
