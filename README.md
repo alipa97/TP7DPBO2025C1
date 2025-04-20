@@ -10,16 +10,18 @@ Program ini adalah sistem manajemen produk untuk skincare yang memungkinkan peng
 - Menghapus otomatis Produk yang terkait jika ada brand atau category yang dihapus.
 
 ## Desain Program
-1. Config Database
+Berikut desain program dari web yang saya buat:
+
+### Config Database
 Pertama, pada file config/db.php, kita mendefinisikan kelas Database yang akan menangani koneksi ke database MySQL. Program menggunakan PDO untuk melakukan query ke database. Konfigurasi database seperti host, username, dan password disesuaikan.
 
-2. Model Classes
+### Model Classes
 - Brand: Kelas untuk menangani data terkait brand skincare. Menyediakan metode seperti mengambil semua brand dan mengelola data brand.
 - Category: Kelas untuk menangani kategori produk skincare. Menyediakan metode untuk mengambil semua kategori dan mengelola data kategori.
 - Product: Kelas untuk menangani data produk skincare. Memiliki metode untuk mengambil semua produk dan mengelola data produk.
 
-3. View:
-Halaman Utama (index.php): Menampilkan semua brands, categories, dan products dalam bentuk tabel. Tabel ini juga menyediakan tautan untuk mengedit dan menghapus data.
+### View
+- *Halaman Utama (index.php)*: Halaman utama (index.php) adalah pusat navigasi untuk seluruh aplikasi. Pada halaman ini, pengguna dapat memilih untuk mengelola produk, brand, dan kategori melalui tautan yang ada di bagian atas halaman. Setelah memilih salah satu menu, aplikasi akan menampilkan daftar yang relevan (seperti produk, brand, atau kategori) dengan opsi untuk menambah, mengedit, atau menghapus entri.
 
 Halaman Edit: Halaman untuk mengedit data brand atau category. Setiap data yang ingin diedit akan diambil berdasarkan id dari URL, kemudian ditampilkan pada form untuk diedit dan disubmit.
 
